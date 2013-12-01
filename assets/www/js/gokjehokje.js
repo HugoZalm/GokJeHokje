@@ -12,6 +12,10 @@ var places = 10;
 var emptyPlaces = maxBoxes - places;
 var indexRandomNumber = 0;
 hint = "on";
+var boxesHmax = 0;
+var boxesVmax = 0;
+var placesMax = 0;
+var numberMax= 0 ;
 
 function redefine() {
 //	maxNumbers = $('#sliderNumber').slider( "option", "value" );
@@ -26,8 +30,8 @@ function redefine() {
 }
 
 function onBodyLoad() {
-//	document.addEventListener("deviceready", onDeviceReady, false);	// aanzetten for phoneGap, uitzetten voor PC
-	onDeviceReady();	// uitzetten for phoneGap, aanzetten voor PC
+	document.addEventListener("deviceready", onDeviceReady, false);	// aanzetten for phoneGap, uitzetten voor PC
+//	onDeviceReady();	// uitzetten for phoneGap, aanzetten voor PC
 }
 
 function onDeviceReady() {
@@ -181,16 +185,16 @@ function makeSettings() {
 	boxesHmax = $('#sliderBoxesH').slider( "option", "max" );
 	boxesVmax = $('#sliderBoxesV').slider( "option", "max" );
 	placesMax = $('#sliderPlaces').slider( "option", "max" );
-	NumberMax = $('#sliderNumber').slider( "option", "max" );
+	numberMax = $('#sliderNumber').slider( "option", "max" );
     $( "#sliderBoxesHmax" ).html(boxesHmax);
     $( "#sliderBoxesVmax" ).html(boxesVmax);
-    $( "#sliderPlacesmax" ).html(PlacesMmax);
-    $( "#sliderNumbermax" ).html(NumberMax);
+    $( "#sliderPlacesmax" ).html(placesMax);
+    $( "#sliderNumbermax" ).html(numberMax);
 
 }
 
 function refreshValues1(){
-alert('Hallo');
+//alert('Hallo');
 	boxesH = $('#sliderBoxesH').slider( "option", "value" );
 	boxesV = $('#sliderBoxesV').slider( "option", "value" );
 	places = $('#sliderPlaces').slider( "option", "value" );
@@ -201,7 +205,7 @@ alert('Hallo');
 }
 
 function refreshValues(){
-alert('hallo');
+//alert('hallo');
 	boxesH = $('#sliderBoxesH').slider( "option", "value" );
 	boxesV = $('#sliderBoxesV').slider( "option", "value" );
 	maxNumbers = $('#sliderNumber').slider( "option", "value" );
@@ -210,6 +214,14 @@ alert('hallo');
     $( "#sliderBoxesVvalue" ).html(boxesV);
     $( "#sliderPlacesvalue" ).html(places);
     $( "#sliderNumbervalue" ).html(maxNumbers);
+	boxesHmax = $('#sliderBoxesH').slider( "option", "max" );
+	boxesVmax = $('#sliderBoxesV').slider( "option", "max" );
+	placesMax = $('#sliderPlaces').slider( "option", "max" );
+	numberMax = $('#sliderNumber').slider( "option", "max" );
+    $( "#sliderBoxesHmax" ).html(boxesHmax);
+    $( "#sliderBoxesVmax" ).html(boxesVmax);
+    $( "#sliderPlacesmax" ).html(placesMax);
+    $( "#sliderNumbermax" ).html(numberMax);
 	emptyPlaces = maxBoxes - places;
 	$('#card').width(boxesH*100).height(boxesV*100);
 }
